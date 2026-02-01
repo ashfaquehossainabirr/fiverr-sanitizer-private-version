@@ -70,6 +70,9 @@ const Dashboard = () => {
     URL.revokeObjectURL(url);
   };
 
+  const handleChange = (e) => {
+    setMessage(e.target.value)
+  }
 
   const handleCopy = async () => {
     if (!sanitizedMessage) return;
@@ -145,7 +148,7 @@ const Dashboard = () => {
                 className={`textarea ${hasRestricted ? "error" : ""}`}
                 placeholder="Type your message here..."
                 value={message}
-                onChange={(e) => setMessage(e.target.value)}
+                onChange={ handleChange }
               />
             </div>
 
